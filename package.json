@@ -1,0 +1,16 @@
+{
+  "name": "style-contract",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "pnpm -r run stub && eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "typescript": "^5.1.3"
+  }
+}

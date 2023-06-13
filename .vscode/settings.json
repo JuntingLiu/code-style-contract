@@ -1,0 +1,16 @@
+{
+  "prettier.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json,*.json,*.js,.prettierrc,.prettierignore,.eslintignore,.gitignore,.npmrc,.nvmrc,README.md,.editorconfig,LICENSE,pnpm-workspace.yaml",
+    "package.json": "*.json,.prettierrc,.prettierignore,.eslintignore,.eslintcache,.gitignore,.npmrc,.nvmrc,README.md,.editorconfig,LICENSE,pnpm-workspace.yaml",
+  },
+  "cSpell.words": [
+    "juntingl"
+  ],
+}
