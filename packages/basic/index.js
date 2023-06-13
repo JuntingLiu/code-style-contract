@@ -7,97 +7,97 @@ module.exports = {
   // 报告所有未使用的 eslint-disable 指令
   reportUnusedDisableDirectives: true,
   extends: [
-    "./standard",
-    "plugin:import/recommended",
+    './standard',
+    'plugin:import/recommended',
     // 对指令的检验，e.g. /* eslint-disable */
-    "plugin:eslint-comments/recommended",
-    "plugin:jsonc/recommended-with-jsonc",
-    "plugin:markdown/recommended",
-    "plugin:yml/standard"
+    'plugin:eslint-comments/recommended',
+    'plugin:jsonc/recommended-with-jsonc',
+    'plugin:markdown/recommended',
+    'plugin:yml/standard',
   ],
   ignorePatterns: [
-    "*.min.*",
-    "*.d.ts",
-    "dist",
-    "public",
-    "output",
-    "out",
-    "temp",
-    "coverage",
-    "CHANGELOG.md",
-    "LICENSE*",
-    "package-lock.json",
-    "yarn.lock",
-    "pnpm-lock.yaml",
-    "__snapshots__",
+    '*.min.*',
+    '*.d.ts',
+    'dist',
+    'public',
+    'output',
+    'out',
+    'temp',
+    'coverage',
+    'CHANGELOG.md',
+    'LICENSE*',
+    'package-lock.json',
+    'yarn.lock',
+    'pnpm-lock.yaml',
+    '__snapshots__',
     // ignore for in lint-staged
-    "*.css",
-    "*.png",
-    "*.ico",
-    "*.toml",
-    "*.patch",
-    "*.txt",
-    "*.crt",
-    "*.key",
-    "Dockerfile",
+    '*.css',
+    '*.png',
+    '*.ico',
+    '*.toml',
+    '*.patch',
+    '*.txt',
+    '*.crt',
+    '*.key',
+    'Dockerfile',
     // force exclude
-    ".vitepress/cache",
+    '.vitepress/cache',
     // force include
-    "!.github",
-    "!.vitepress",
-    "!.vscode"
+    '!.github',
+    '!.vitepress',
+    '!.vscode',
   ],
   plugins: [
-    "html",
-    "unicorn",
-    "no-only-tests",
-    "unused-imports",
+    'html',
+    'unicorn',
+    'no-only-tests',
+    'unused-imports',
   ],
   // 共享设置
   settings: {
-    "import/resolver": {
-      node: { extensions: [".js", ".mjs"] },
-    }
+    'import/resolver': {
+      node: { extensions: ['.js', '.mjs'] },
+    },
   },
   overrides: [
     {
-      files: ["*.json", "*.json5", "*.jsonc"],
-      parser: "json-eslint-parser",
+      files: ['*.json', '*.json5', '*.jsonc'],
+      parser: 'json-eslint-parser',
       rules: {
         // Disallow or enforce spaces inside of bracket
-        "jsonc/array-bracket-spacing": ["error", "never"],
+        'jsonc/array-bracket-spacing': ['error', 'never'],
         // Require or disallow trailing commas
-        "jsonc/comma-dangle": ["error", "never"],
-        "jsonc/indent": ["error", 2],
+        'jsonc/comma-dangle': ['error', 'never'],
+        'jsonc/indent': ['error', 2],
         // Enforce consistent spacing between keys and values in object literal properties
-        "jsonc/key-spacing": ["error", { multiline: true, afterColon: true }],
+        'jsonc/key-spacing': ['error', { beforeColon: false, afterColon: true }],
         // Disallow octal escape sequences in string literals
-        "jsonc/no-octal-escape": "error",
+        'jsonc/no-octal-escape': 'error',
         // Enforce consistent line breaks inside braces
-        "jsonc/object-curly-newline": ["error", { multiline: true, consistent: true }],
+        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
         // Enforce consistent spacing inside braces
-        "jsonc/object-curly-spacing": ["error", "always"],
+        'jsonc/object-curly-spacing': ['error', 'always'],
         // Enforce placing object properties on separate lines.
-        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
-      }
+        'jsonc/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+      },
     },
     {
-      files: ["*.yaml", "*.yml"],
-      parser: "yaml-eslint-parser",
+      files: ['*.yaml', '*.yml'],
+      parser: 'yaml-eslint-parser',
       rules: {
         // Enforce consistent spacing after the # in a comment. Off
-        "spaced-comment": "off"
-      }
+        'spaced-comment': 'off',
+      },
     },
     {
-      files: ["package.json"],
-      parser: "jsonc-eslint-parser",
+      files: ['package.json'],
+      parser: 'jsonc-eslint-parser',
       rules: {
         // Require object keys to be sorted
-        "jsonc/sort-keys": [
-          "error",
+        'jsonc/sort-keys': [
+          'error',
           {
-            pathPattern: "^$",
+            pathPattern: '^$',
             order: [
               'publisher',
               'name',
@@ -142,264 +142,264 @@ module.exports = {
               'simple-git-hooks',
               'lint-staged',
               'eslintConfig',
-            ]
+            ],
           },
           {
-            pathPattern: "^(?:dev|peer|optional|bundled)?[Dd]dependencies$",
-            order: { type: "asc" }
+            pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]dependencies$',
+            order: { type: 'asc' },
           },
           {
-            pathPattern: "^exports.*$",
+            pathPattern: '^exports.*$',
             order: [
-              "types",
-              "require",
-              "import"
-            ]
-          }
-        ]
-      }
+              'types',
+              'require',
+              'import',
+            ],
+          },
+        ],
+      },
     },
     {
-      files: ["*.d.ts"],
+      files: ['*.d.ts'],
       rules: {
-        "import/no-duplicates": "off"
-      }
+        'import/no-duplicates': 'off',
+      },
     },
     {
-      files: ["*.ts", "*.tsx", "*.mts", "*cts"],
+      files: ['*.ts', '*.tsx', '*.mts', '*cts'],
       rules: {
-        "no-void": ["error", { allowAsStatement: true }]
-      }
+        'no-void': ['error', { allowAsStatement: true }],
+      },
     },
     {
-      files: ["scripts/**/*.*", "cli.*"],
+      files: ['scripts/**/*.*', 'cli.*'],
       rules: {
-        "no-console": "off"
-      }
+        'no-console': 'off',
+      },
     },
     {
-      files: ["*.test.ts", "*.test.js", "*.spec.ts", "*.spec.js"],
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
       rules: {
-        "no-unused-expressions": "off",
-        "no-only-tests/no-only-tests": "error"
-      }
+        'no-unused-expressions': 'off',
+        'no-only-tests/no-only-tests': 'error',
+      },
     },
     {
       // Code blocks in markdown file
-      files: ["**/*.md/*.*"],
+      files: ['**/*.md/*.*'],
       rules: {
-        "@typescript-eslint/no-redeclare": "off",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-use-before-define": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/comma-dangle": "off",
-        "@typescript-eslint/consistent-type-imports": "off",
-        "@typescript-eslint/no-namespace": "off",
-        "@typescript-eslint/no-require-imports": "off",
-        "import/no-unresolved": "off",
-        "unused-imports/no-unused-imports": "off",
-        "unused-imports/no-unused-vars": "off",
-        "no-alert": "off",
-        "no-console": "off",
-        "no-restricted-imports": "off",
-        "no-undef": "off",
-        "no-unused-expressions": "off",
-        "no-unused-vars": "off",
-      }
-    }
+        '@typescript-eslint/no-redeclare': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-use-before-define': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/comma-dangle': 'off',
+        '@typescript-eslint/consistent-type-imports': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
+        'import/no-unresolved': 'off',
+        'unused-imports/no-unused-imports': 'off',
+        'unused-imports/no-unused-vars': 'off',
+        'no-alert': 'off',
+        'no-console': 'off',
+        'no-restricted-imports': 'off',
+        'no-undef': 'off',
+        'no-unused-expressions': 'off',
+        'no-unused-vars': 'off',
+      },
+    },
   ],
   rules: {
     // 与 --report-unused-disable-directives 指令具有相同的效果，但相对更有用，因为可以在共享配置中配置。
     // "eslint-comments/no-unused-disable": "error",
 
     // import
-    "import/order": "error",
-    "import/first": "error",
-    "import/no-mutable-exports": "error",
-    "import/no-unresolved": "off",
-    "import/no-absolute-path": "off",
-    "import/newline-after-import": ["error", { count: 1, considerComments: true }],
+    'import/order': 'error',
+    'import/first': 'error',
+    'import/no-mutable-exports': 'error',
+    'import/no-unresolved': 'off',
+    'import/no-absolute-path': 'off',
+    'import/newline-after-import': ['error', { count: 1, considerComments: true }],
 
     // Common
-    "semi": ["error", "never"],
-    "curly": ["error", "multi-or-nest", "consistent"],
-    "quotes": ["error", "single"],
-    "quote-props": ["error", "consistent-as-needed"],
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
+    'semi': ['error', 'never'],
+    'curly': ['error', 'multi-or-nest', 'consistent'],
+    'quotes': ['error', 'single'],
+    'quote-props': ['error', 'consistent-as-needed'],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
       {
-        vars: "all",
-        varsIgnorePattern: "^_",
-        args: "after-used",
-        argsIgnorePattern: "^_"
-      }
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
     ],
-    "no-param-reassign": "off",
-    "array-bracket-spacing": ["error", "never"],
-    "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
-    "block-spacing": ["error", "always"],
-    "camelcase": "off",
-    "comma-spacing": ["error", { before: false, "after": true }], "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "always-multiline"],
-    "no-constant-condition": "warn",
-    "no-debugger": "error",
-    "no-console": ["error", { allow: ["warn", "error"] }],
-    "no-cond-assign": ["error", "always"],
-    "func-call-spacing": "off",
-    "key-spacing": ["error", { beforeColon: false, afterColon: true }],
-    "indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
-    "no-restricted-syntax": ["error", "DebuggerStatement", "LabeledStatement", "WithStatement"],
-    "object-curly-spacing": ["error", "always"],
-    "no-return-await": "off",
-    "space-before-function-paren": [
-      "error",
+    'no-param-reassign': 'off',
+    'array-bracket-spacing': ['error', 'never'],
+    'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+    'block-spacing': ['error', 'always'],
+    'camelcase': 'off',
+    'comma-spacing': ['error', { before: false, after: true }],
+    'comma-style': ['error', 'last'],
+    'comma-dangle': ['error', 'always-multiline'],
+    'no-constant-condition': 'warn',
+    'no-debugger': 'error',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-cond-assign': ['error', 'always'],
+    'func-call-spacing': 'off',
+    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+    'indent': ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
+    'no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
+    'object-curly-spacing': ['error', 'always'],
+    'no-return-await': 'off',
+    'space-before-function-paren': [
+      'error',
       {
-        anonymous: "always",
-        named: "never",
-        asyncArrow: "always"
-      }
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
     ],
-    "no-restricted-globals": [
-      "error",
-      { name: "global", message: "Use `globalThis` instead." },
-      { name: "self", message: "Use `globalThis` instead." }
+    'no-restricted-globals': [
+      'error',
+      { name: 'global', message: 'Use `globalThis` instead.' },
+      { name: 'self', message: 'Use `globalThis` instead.' },
     ],
-    "no-restricted-properties": [
-      "error",
+    'no-restricted-properties': [
+      'error',
       {
-        property: "__proto__",
-        message: "Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead."
+        property: '__proto__',
+        message: 'Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.',
       },
       {
-        property: "__defineGetter__",
-        message: "Use `Object.defineProperty` instead."
+        property: '__defineGetter__',
+        message: 'Use `Object.defineProperty` instead.',
       },
       {
-        property: "__defineSetter__",
-        message: "Use `Object.defineProperty` instead."
+        property: '__defineSetter__',
+        message: 'Use `Object.defineProperty` instead.',
       },
       {
-        property: "__lookupGetter__",
-        message: "Use `Object.getOwnPropertyDescriptor` instead."
+        property: '__lookupGetter__',
+        message: 'Use `Object.getOwnPropertyDescriptor` instead.',
       },
       {
-        property: "__lookupSetter__",
-        message: "Use `Object.getOwnPropertyDescriptor` instead."
-      }
+        property: '__lookupSetter__',
+        message: 'Use `Object.getOwnPropertyDescriptor` instead.',
+      },
     ],
 
     // es6
-    "no-var": "error",
-    "prefer-const": [
-      "error",
+    'no-var': 'error',
+    'prefer-const': [
+      'error',
       {
-        destructuring: "all",
-        ignoreReadBeforeAssign: true
-      }
+        destructuring: 'all',
+        ignoreReadBeforeAssign: true,
+      },
     ],
-    "prefer-arrow-callback": [
-      "error",
+    'prefer-arrow-callback': [
+      'error',
       {
         allowNamedFunctions: false,
-        allowUnboundThis: true
-      }
+        allowUnboundThis: true,
+      },
     ],
-    "object-shorthand": [
-      "error",
-      "always",
+    'object-shorthand': [
+      'error',
+      'always',
       {
         ignoreConstructors: false,
-        avoidQuotes: true
-      }
+        avoidQuotes: true,
+      },
     ],
-    "prefer-exponentiation-operator": "error",
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "prefer-template": "error",
-    "template-curly-spacing": "error",
-    "arrow-parens": [
-      "error",
-      "as-needed",
+    'prefer-exponentiation-operator': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'template-curly-spacing': 'error',
+    'arrow-parens': [
+      'error',
+      'as-needed',
       {
-        requireForBlockBody: true
-      }
+        requireForBlockBody: true,
+      },
     ],
-    "generator-star-spacing": "off",
-    "spaced-comment": [
-      "error",
-      "always",
+    'generator-star-spacing': 'off',
+    'spaced-comment': [
+      'error',
+      'always',
       {
-        line: { markers: ["/"], exceptions: ["/", "#"] },
-        block: { markers: ["!"], exceptions: ["*"], balanced: true }
-      }
+        line: { markers: ['/'], exceptions: ['/', '#'] },
+        block: { markers: ['!'], exceptions: ['*'], balanced: true },
+      },
     ],
 
     // best-practice
-    "array-callback-return": "error",
-    "block-scoped-var": "error",
-    "consistent-return": "off",
-    "complexity": "off",
-    "eqeqeq": ["error", "smart"],
-    "no-alert": "warn",
-    "no-case-declarations": "error",
-    "no-multi-spaces": "error",
-    "no-multi-str": "error",
-    "no-with": "error",
-    "no-void": "error",
-    "no-useless-escape": "off",
-    "no-invalid-this": "error",
-    "vars-on-top": "error",
-    "require-await": "off",
-    "no-return-assign": "off",
-    "operator-linebreak": ["error", "before"],
-    "max-statements-per-line": ["error", { max: 1 }],
+    'array-callback-return': 'error',
+    'block-scoped-var': 'error',
+    'consistent-return': 'off',
+    'complexity': 'off',
+    'eqeqeq': ['error', 'smart'],
+    'no-alert': 'warn',
+    'no-case-declarations': 'error',
+    'no-multi-spaces': 'error',
+    'no-multi-str': 'error',
+    'no-with': 'error',
+    'no-void': 'error',
+    'no-useless-escape': 'off',
+    'no-invalid-this': 'error',
+    'vars-on-top': 'error',
+    'require-await': 'off',
+    'no-return-assign': 'off',
+    'operator-linebreak': ['error', 'before'],
+    'max-statements-per-line': ['error', { max: 1 }],
 
     // node
-    "n/prefer-global/buffer": ["error", "never"],
-    "n/no-callback-literal": "off",
+    'n/prefer-global/buffer': ['error', 'never'],
+    'n/no-callback-literal': 'off',
 
     // unicorn
-    "unicorn/error-message": "error",
-    "unicorn/escape-case": "error",
-    "unicorn/no-instanceof-array": "error",
-    "unicorn/no-new-buffer": "error",
-    "unicorn/no-unsafe-regex": "off",
-    "unicorn/number-literal-case": "error",
-    "unicorn/prefer-includes": "error",
-    "unicorn/prefer-string-starts-ends-with": "error",
-    "unicorn/prefer-text-content": "error",
-    "unicorn/prefer-type-error": "error",
-    "unicorn/throw-new-error": "error",
-    "unicorn/prefer-node-protocol": "error",
-    "unicorn/prefer-number-properties": "error",
+    'unicorn/error-message': 'error',
+    'unicorn/escape-case': 'error',
+    'unicorn/no-instanceof-array': 'error',
+    'unicorn/no-new-buffer': 'error',
+    'unicorn/no-unsafe-regex': 'off',
+    'unicorn/number-literal-case': 'error',
+    'unicorn/prefer-includes': 'error',
+    'unicorn/prefer-string-starts-ends-with': 'error',
+    'unicorn/prefer-text-content': 'error',
+    'unicorn/prefer-type-error': 'error',
+    'unicorn/throw-new-error': 'error',
+    'unicorn/prefer-node-protocol': 'error',
+    'unicorn/prefer-number-properties': 'error',
 
+    'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
+    'eslint-comments/disable-enable-pair': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-as-default': 'off',
+    'import/namespace': 'off',
 
-    "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": true }],
-    "eslint-comments/disable-enable-pair": "off",
-    "import/no-named-as-default-member": "off",
-    "import/no-named-as-default": "off",
-    "import/namespace": "off",
-
-    "sort-imports": [
-      "error",
+    'sort-imports': [
+      'error',
       {
-        ignoreCase: false
+        ignoreCase: false,
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false
-      }
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
     ],
 
     // yml
-    "yml/quotes": [
-      "error",
+    'yml/quotes': [
+      'error',
       {
-        prefer: "single",
-        avoidEscape: false
-      }
+        prefer: 'single',
+        avoidEscape: false,
+      },
     ],
-    "yml/no-empty-document": "off",
-  }
-};
+    'yml/no-empty-document': 'off',
+  },
+}
