@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "packageManager": "pnpm@8.6.1",
+  "private": true,
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
