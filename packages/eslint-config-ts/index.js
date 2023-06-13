@@ -26,7 +26,7 @@ module.exports = {
             project: [tsconfig],
           },
           parser: '@typescript-eslint/parser',
-          excludeFiles: ['**/*.md/*.*'],
+          excludedFiles: ['**/*.md/*.*'],
           files: ['*.ts', '*.tsx'],
           // 采用：https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
           rules: {
