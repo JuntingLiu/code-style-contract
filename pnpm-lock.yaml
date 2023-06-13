@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@juntingl/eslint-config':
+      '@junting/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
       bumpp:
@@ -23,7 +23,7 @@ importers:
 
   packages/eslint-config:
     dependencies:
-      '@juntingl/eslint-config-react':
+      '@junting/eslint-config-react':
         specifier: workspace:*
         version: link:../eslint-config-react
     devDependencies:
@@ -79,7 +79,7 @@ importers:
 
   packages/eslint-config-react:
     dependencies:
-      '@juntingl/eslint-config-ts':
+      '@junting/eslint-config-ts':
         specifier: workspace:*
         version: link:../eslint-config-ts
       eslint-plugin-react:
@@ -101,7 +101,7 @@ importers:
 
   packages/eslint-config-ts:
     dependencies:
-      '@juntingl/eslint-config-basic':
+      '@junting/eslint-config-basic':
         specifier: workspace:*
         version: link:../eslint-config-basic
       '@typescript-eslint/eslint-plugin':

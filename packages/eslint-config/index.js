@@ -1,5 +1,5 @@
 module.exports = {
   extends: [
-    "@juntingl/eslint-config-react"
+    "@junting/eslint-config-react"
   ]
 }

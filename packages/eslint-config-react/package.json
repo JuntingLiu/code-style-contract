@@ -1,5 +1,5 @@
 {
-  "name": "@juntingl/eslint-config-react",
+  "name": "@junting/eslint-config-react",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -19,7 +19,7 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "@juntingl/eslint-config-ts": "workspace:*",
+    "@junting/eslint-config-ts": "workspace:*",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0"
   },
