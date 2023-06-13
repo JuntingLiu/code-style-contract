@@ -1,15 +1,16 @@
 {
-  "name": "style-contract",
+  "name": "@juntingl/style-contract",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "pnpm -r run stub && eslint ."
+    "lint": "pnpm -r run lint"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@juntingl/eslint-config": "workspace:*",
     "eslint": "^8.42.0",
     "typescript": "^5.1.3"
   }

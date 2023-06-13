@@ -1,0 +1,21 @@
+{
+  "name": "@juntingl/eslint-config",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@juntingl/eslint-config-react": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0"
+  }
+}
